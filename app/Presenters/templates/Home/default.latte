@@ -1,0 +1,53 @@
+{block content}
+<br/>
+<h2>Pojištěnci</h2>
+<br/>
+<table class="table striped table-striped table-hover">
+    <tr>
+        <th>Jméno a Příjmení</th>
+        <th>Telefon</th>
+        <th>Věk</th>
+    </tr>
+    {foreach $pojistenci as $pojistenec}
+        <tr>
+          <td>{$pojistenec->jmeno} {$pojistenec->prijmeni}</td>
+          <td>{$pojistenec->telefon}</td>
+          <td>{$pojistenec->vek}</td>
+        </tr>
+    {/foreach}
+</table>
+<br/>
+{*control pojistenecForm*}
+<h3>Nový pojištěnec</h3>
+<div class="row">
+    <div class="col-md-12 mx-auto">
+        <form n:name="pojistenecForm">
+            <div class="form-group row">
+            <div class="col-sm-6">
+                <label n:name = "jmeno">Jméno</label>
+                <input n:name = "jmeno" class="form-control" placeholder="Jméno">
+            </div>
+            <div class="col-sm-6">
+                <label n:name = "prijmeni">Příjmení</label>
+                <input n:name = "prijmeni" class="form-control" placeholder="Příjmení">
+            </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <label n:name = "vek">Věk</label>
+                    <input n:name = "vek" class="form-control" placeholder="Věk">
+                </div>
+                <div class="col-sm-6">
+                    <label n:name = "telefon">Telefon</label>
+                    <input n:name = "telefon" class="form-control" placeholder="Telefon">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12 text-center">
+                    <input n:name = "send" class="btn btn-primary btn-lg mt-4">
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
